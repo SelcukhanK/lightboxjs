@@ -10,6 +10,9 @@ h1 {
     margin: 0;
     padding: .67em 0;
 }
+h3 {
+    font-weight: 400;
+}
 img {
     max-width: 100%;
 }
@@ -48,17 +51,35 @@ main img {
 
 /* modaal opmaken */
 .modaal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 7);
+    background-color: rgba(0, 0, 0, .7);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.sluit-knop {
+    float: right;
+    font-size: 1.5em;
+    padding: 0.5em 0.5rem;
+}
+
+.sluit-knop:hover {
+    color: red;
+
 }
 
 .modaal-container {
     background-color: #ffffff;
-    max-width: 70vw;
+    max-width: 45vw;
+    padding: 2em;
+    max-height: 85vh;
+    overflow: auto;
+    animation: schuif-binnen .6s cubic-bezier(.17,.67,.8,1.47) forwards;
 }
 
 .validatie img {
@@ -66,5 +87,120 @@ main img {
     width: auto;
     border: 0;
     margin: 0 .3em;
+    cursor: pointer;
+}
+
+@keyframes schuif-binnen {
+    0% {margin-top: 90vh;}
+    100% {margin-top: 0;}
+}
+
+@-moz-keyframes schuif-binnen {
+    0% {margin-top: 90vh;}
+    100% {margin-top: 0;}
+}
+
+@-webkit-keyframes schuif-binnen {
+    0% {margin-top: 90vh;}
+    100% {margin-top: 0;}
+}
+
+@-o-keyframes schuif-binnen {
+    0% {margin-top: 90vh;}
+    100% {margin-top: 0;}
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    opacity: 0, 0, 0, 0.7;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.login-content {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.aanmelden {
+ 
+}
+.aanmelden-content {
+
+}
+.knop {
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: 25px;
+    width: 200px;
+    height: 50px;
+    border-radius: 80px;
+    line-height: 60px;
+    border: 3px solid #009688;
+    text-align: center;
+    color: #009688;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: .3s;
+    display: block;
+    text-decoration: none;
+    
+}
+.knop:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #009688;
+    top: -100%;
+    opacity: .5;
+    left: 0;
+    z-index: -1;
+    transition: .3s;
+}
+.knop:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #009688;
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .3s;
+    transition-delay: .2s;
+}
+.knop:hover {
+    color: #fff;
+}
+.knop:hover:before {
+    top: 0;
+}
+.knop:hover:after {
+    top: 0;
+}
+
+.input {
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
     cursor: pointer;
 }
