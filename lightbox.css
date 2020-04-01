@@ -156,6 +156,26 @@ main img {
     text-decoration: none;
     
 }
+.knop2 {
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: 25px;
+    width: 200px;
+    height: 50px;
+    border-radius: 80px;
+    line-height: 60px;
+    border: 3px solid #009688;
+    text-align: center;
+    color: #009688;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: .3s;
+    display: block;
+    text-decoration: none;
+    left: 150px;
+    top: 50px;
+}
 .knop:before {
     content: '';
     width: 100%;
